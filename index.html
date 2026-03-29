@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Plant Disease Detection</title>
+</head>
+
+<body>
+    <h1> 🌿 Plant Disease Detection </h1>
+    <p> Upload Photo of Leaf to detect disease using Yolov8 API</p>
+
+    <div class="upload-box" onclick="document.getElementById('file-input').click()">
+        <h3> Drag and Drop or Click to Upload</h3>
+        <p> Supports JPG, PNG</p>
+        <input type="file"  id="file-input" accept="image/*" onchange="loadImage(event)">
+    </div>
+
+    <button id="analyze-btn" class="btn" onclick="analyzeImage()" disabled>Analyze Plant</button>
+
+    <div id="results-text"></div>
+
+    <div class="image-container">
+        <img id="preview-image" alt="Uploaded Photo">
+        <canvas id="overlay-canvas"></canvas>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
